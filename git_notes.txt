@@ -101,3 +101,58 @@ git branch -d branch__name # _deletes branch locally, not remotely
 20) push the delete brancg changes to remote
 
 git push origin --delete branch__name
+
+
+push/pull --- makes interactions with remote repository which is common to everyone.
+commit --- deals with only branch changes
+
+############################ Updating mistakes ##############################
+
+21) if any commit message is wrongly given, we can update the mesage using amend command of git.
+
+git commit --amend -m "update__msg"
+
+22) if any file is missed during the commmit, we can can to last commit by using amend command(but the missed file should be added and committed)
+
+git commit --amend
+
+23) if you have committed with wrong branch, we can use cherry-pick to resolve the same.
+
+switch to actual branch -- git checkout branch__name
+use cherry-pick -- git cherry-pick hash__code__of__the__wrong__commit
+
+24) Reset - rollback the commit -- (reset only, reset soft, reset hard) -- creates problems when other contributors have pulled the changes.
+
+a) reset soft --> git reset --soft hash__code 
+only resets one particular commit, changes are kept even after the reset, but in staging Area
+
+b) reset --> git reset hash__code
+only resets one particular commit, changes are kept even after the reset, but in working directory
+
+c) reset hard --> git reset --hard hash__code
+reset to code with particular hash code and changes from the tracked files are completely deleted.
+
+d) To remove the changes from the untracked files, we can use --> git clean -df 
+
+25) Even after the reset, we can get back the changes using checkout.
+
+git checkout hash__code
+
+After getting the hard rest changes back to code, we need to create a branch which that code, as we are in detached code branch.
+
+git branch backup
+
+we can get all commit changes hascode using reflog.
+
+git reflog
+
+26) Inorder to prevent the collision of resetting the changes and others pull requests, we can safely do a revert.
+
+git revert hash__code
+
+reverts all the changes by making an extra commit
+
+
+################################## Stash commands #####################
+
+27) 
