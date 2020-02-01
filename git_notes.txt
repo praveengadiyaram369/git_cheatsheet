@@ -155,4 +155,22 @@ reverts all the changes by making an extra commit
 
 ################################## Stash commands #####################
 
-27) 
+27) If you are not ready to commit the changes, we can use stash command to keep files in a temporary place. After saving the stash, code would be automatically reverted to changes before.
+
+git stash save "stash__message"
+
+28) To get back the changes from stash temporary place.
+
+a)   git stash list # _gives the list of all stashes
+b)   git stash apply stash__code
+
+29) Another way of getting stash data is by using pop command
+
+git stash pop 
+
+30) if we forgot to add branch to master and make changes, we can use stash to shift the changes from master to branch.
+
+from master --> git stash save "stash__message"
+shift to branch --> git checkout branch__name
+apply changes to branch --> git stash pop
+
