@@ -1,0 +1,103 @@
+SVN - Central version contol system 
+GIT - Distributed version control system
+
+1) Version -- git --version
+
+2) User credentials
+
+git config --global user.name "praveengadiyaram369"
+git config --global user.email "praveengadiyaram@gmail.com"
+
+git config --list
+
+3) Help
+
+git help config
+
+4)  Check Git status
+
+git status
+
+5) create .gitignore file to add files which you don't want to track
+
+touch .gitignore
+
+6) Working Directory --> Staging Area --> .git Directory
+
+Working Directory - where all untracked and changed files exist  -- Color: Red
+Staging Area - where all the files are cached before commit      -- Color: Green
+.git Directory - where the last commited files exist             -- Color: ----
+
+7) Adding files to staging Area.
+
+git add file__name
+git add -A # _add all files in working Directory to staging Area.
+
+8) Remove cached files from the staging area to working directory.
+
+git reset file__name
+git rest # _to reset all files from the staging area.
+
+9) commit files to git repository
+
+git commit -m "commit_message"
+
+10) check all previous commits using log.
+
+git log
+
+11) cloning/downloading a repository
+
+git clone url__repo.git .
+
+12) Creating a branch, when you want to create a desired feature on top of an existing code.
+
+git branch branch__name
+
+13) By default we are in master branch, so we need to change the branch from master to specific branch__name
+
+git checkout branch__name
+
+14) To check all branches created
+
+git branch
+
+15) we need to push our local branch changes to remote(main repository)
+
+git push -u origin branch__name
+
+16) check if there are any remote repositories
+
+git remote -v
+
+17) if there is no result from the above command, then we need to create a remote repository.(https://stackoverflow.com/a/15445062/5671715)
+
+git remote add origin git__url
+git remote add origin https://github.com/praveengadiyaram369/MSR-3.git
+
+
+18) Merging branch with the master
+
+a) checkout master branch 
+git checkout master
+
+b) Pull the updated changes to master
+git pull origin master
+
+c) merge master branch
+git branch --merged
+
+d) merge the branch with master
+git merge branch__name
+
+e) Final merge changes from master to origin
+git push origin master
+
+
+19) Delete branch after task is completed.(locally)
+
+git branch -d branch__name # _deletes branch locally, not remotely
+
+20) push the delete brancg changes to remote
+
+git push origin --delete branch__name
